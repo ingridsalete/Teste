@@ -1,0 +1,122 @@
+/* Estilo para o contêiner principal do formulário de cadastro */
+.page {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #023047;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh;
+    background-color: #480ca8;
+    background-image: url('../img/No_Problem.png');
+    background-size: 30%;
+}
+
+/* Estilo para o formulário de cadastro */
+.form {
+    max-width: 320px; /* Reduz a largura do formulário */
+    width: 100%;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 20px; /* Reduz o espaço interno */
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 15px;
+    text-align: center; /* Centraliza o conteúdo */
+    margin-left: 20px;
+}
+
+/* Estilo para o título "Cadastro" */
+.form h1 {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.5em; /* Reduz o tamanho do título */
+}
+
+/* Estilo para os parágrafos no formulário */
+.form p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px; /* Reduz o espaço inferior */
+}
+
+/* Estilo para os grupos de entrada de dados */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Estilo para as etiquetas dos campos */
+.input-group label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Estilo para as entradas de dados */
+.input-group input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 90%;
+}
+
+.input-group input:focus {
+    border: 1px solid red;
+}
+
+/* Estilo para os links no formulário */
+.form a {
+    font-size: 13px;
+    color: #555;
+    transition: all linear 160ms;
+}
+
+.form a:hover {
+    color: red;
+}
+
+/* Estilo para o botão "Acessar" */
+.btn {
+    background-color: red;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none !important;
+    transition: all linear 160ms;
+    cursor: pointer;
+    margin: 0 !important;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: red;
+}
+
+/* Estilo para a imagem de fundo */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    width: 900%;
+    height: 100vh;
+    margin-right: 100px;
+    margin-left: 200px;
+}
+
+/* Estilo para a imagem dentro do formulário de cadastro */
+.login-image {
+   /* display: block; /* Torna a imagem um elemento de bloco */
+    max-width: 70%; /* Define a largura máxima da imagem para ajustá-la ao contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 0 auto; /* Centraliza horizontalmente a imagem no contêiner */
+}

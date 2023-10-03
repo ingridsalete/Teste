@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="page">
+        <form method="POST" class="form" onsubmit="return validateForm()">
+            <img src="./img/img1.png" alt="Imagem de login" class="login-image">
+
+            <h1>Cadastro</h1>
+            <p>Digite os seus dados de acesso no campo abaixo.</p>
+            <div class="input-group">
+                <label for="name">Nome</label>
+                <input type="text" name="name" id="name" placeholder="Digite seu nome completo" required>
+            </div>
+            <div class="input-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" class="input-padrao" required pattern="[0-9]+" title="Digite apenas números">
+            </div>
+            <div class="input-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite o CPF no formato: 000.000.000-00 (apenas números)">
+            </div>
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+            </div>
+            <div class="input-group">
+                <label for="cep">Endereço</label>
+                <input id="cep" type="text" placeholder="Digite o seu endereço" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="Digite sua senha" required>
+            </div>
+            <div class="input-group">
+                <label for="confirmPassword">Confirme a Senha</label>
+                <input type="password" id="confirmPassword" placeholder="Confirme sua senha" required>
+            </div>
+            <button type="submit" class="btn">Acessar</button>
+        </form>
+        
+        <script>
+            function validateForm() {
+                var name = document.getElementById("name").value;
+                var telefone = document.getElementById("telefone").value;
+                var cpf = document.getElementById("cpf").value;
+                var email = document.getElementById("email").value;
+                var cep = document.getElementById("cep").value;
+                var password = document.getElementById("password").value;
+                var confirmPassword = document.getElementById("confirmPassword").value;
+                var passwordInfo = document.getElementById("passwordInfo");
+                var errorMessage = "";
+
+                // Verificar se a senha atende aos critérios
+                var regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()-+=]).{6,}$/;
+                var isPasswordValid = regex.test(password);
+
+                if (!name || !telefone || !cpf || !email || !cep) {
+                    errorMessage += "Por favor, preencha todos os campos obrigatórios.\n";
+                }
+
+                if (!isPasswordValid) {
+                    errorMessage += "A senha deve conter pelo menos 6 caracteres, incluindo pelo menos uma letra maiúscula, um número e um caractere especial (!@#$%^&*()-+=).\n";
+                }
+
+                if (password !== confirmPassword) {
+                    errorMessage += "As senhas não coincidem.";
+                }
+
+                if (errorMessage !== "") {
+                    alert(errorMessage);
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
+                document.addEventListener("DOMContentLoaded", function () {
+            // Identifica o formulário de cadastro
+            var cadastroForm = document.getElementById("cadastroForm");
+
+            // Adiciona um evento para ouvir o envio do formulário
+            cadastroForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+                
+                // Aqui você pode adicionar a lógica de processamento do formulário, como enviar os dados para o servidor.
+
+                // Depois de processar com sucesso o cadastro, redirecione para a página de login.
+                window.location.href = "login.html";
+            });
+        });
+        </script>
+    </div>
+</body>
+</html>
